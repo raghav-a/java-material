@@ -26,6 +26,12 @@ Type safety
 SO many libraries
 web, mobile, desktop, networking...
 
+is java pure OO ? 
+
+primitives, operators and a touch of functional programming.
+
+smalltalk
+
 
 2 JVM JRE, JDK 
 
@@ -102,7 +108,7 @@ Whats an instance variable?
 
 
 
-- What does the ìstaticî keyword mean ? 
+- What does the ‚Äústatic‚Äù keyword mean ? 
 The static keyword denotes that a member variable or method can be accessed, without requiring an instantiation of the class to which it belongs. 
 
 - Can you override private or static method in Java ?
@@ -122,14 +128,14 @@ initialization blocks
 Initialization blocks execute in the order they appear.
 Static Initialization blocks run once when the class is first loaded.
 Instance Initialization blocks run every time a class instance is created.
-Instance Initialization blocks run after the constructorís call to super().
+Instance Initialization blocks run after the constructor‚Äôs call to super().
 
 Inner classes 
 
 What is the difference between a static and a non-static inner class? 
 
-Like static methods and static members are defined in a class, a class can also be static. To specify the static class, prefix the keyword ëstaticí before the keyword ëclassí.
-Example : public static class InnerClass { Ö }
+Like static methods and static members are defined in a class, a class can also be static. To specify the static class, prefix the keyword ‚Äòstatic‚Äô before the keyword ‚Äòclass‚Äô.
+Example : public static class InnerClass { ‚Ä¶ }
 Differences between static classes and non-static classes:
 A static inner class is like other regular classes. They need to be referred by the class name being it is static, e.g. OuterClass.InnerClass. A static inner class can have access even to the private members of the outer class.
 
@@ -143,6 +149,8 @@ Inheritance and ploymorphism
 
 
 ------------------------------
+
+
 
 what is inheritance and what do we achieve by that?
 
@@ -161,6 +169,10 @@ Does a subclass inherit both member variables and methods?
 How would you enforce a method to be not inherited by the subclass
 
 The purpose of an abstract class is to implement the concept abstraction that is what to do, but not why to do.
+
+why do we need abstract classes
+
+why do we need interface
 
 
 different acccess sepcifiers?
@@ -247,7 +259,7 @@ Access Specifiers
 
 
 Java supports 3 ways of creating instances.
-By using new operator ñ Ex : Product prodMouse = new Product();
+By using new operator ‚Äì Ex : Product prodMouse = new Product();
 By using Class.forName(classname).newInstance() method 
 Ex: Class.forName(Product).newInstance();
 By using clone() method - Ex: Object copy = obj.clone(); 
@@ -258,12 +270,12 @@ By using clone() method - Ex: Object copy = obj.clone();
 What is the difference between the String and StringBuffer classes?  
 String class is immutable. The characters of string objects can not be changed / modified. StringBuffer is mutable. The characters of StringBuffer objects can be modified / changed.
 String class is used for simple investigations on string objects.
-StringBufferís performance is faster than String when concatenating other strings. String class concatenates the other string by using + sign. After concatenation, it returns another String object. This string object can be reassigned to the original String reference.
-Ex : str = str + ìto Indiaî ;// where str=îWelcomeî
+StringBuffer‚Äôs performance is faster than String when concatenating other strings. String class concatenates the other string by using + sign. After concatenation, it returns another String object. This string object can be reassigned to the original String reference.
+Ex : str = str + ‚Äúto India‚Äù ;// where str=‚ÄùWelcome‚Äù
 The concatenation creates a temporary String object, and is reassigned to str.
 Using StringBuffer, the concatenation is done by using append() method.
-Ex : str.append(ìto Indiaî); // str is a StringBuffer objectís reference variable and //assigned ìWelcomeî.
-The conctention is done only by appending the ìstring to Indiaî to the original StringBuffer object ìWelcomeî.
+Ex : str.append(‚Äúto India‚Äù); // str is a StringBuffer object‚Äôs reference variable and //assigned ‚ÄúWelcome‚Äù.
+The conctention is done only by appending the ‚Äústring to India‚Äù to the original StringBuffer object ‚ÄúWelcome‚Äù.
 
 What is the functionality of instanceOf() ?
 instanceOf opertaor is used to check whether an object can be cast to a specific type without throwing ClassCastException.
@@ -287,7 +299,7 @@ Which two method you need to implement to use an Object as key in HashMap?
 -In order to use any object as Key in HashMap or Hashtable, it must implements equals and hashcode method in Java.
 
 
-Whatís wrong using HashMap in multithreaded environment? When get() method go to infinite loop?
+What‚Äôs wrong using HashMap in multithreaded environment? When get() method go to infinite loop?
 Well nothing is wrong, it depending upon how you use. For example if you initialize the HashMap just by one thread and then all threads are only reading from it, then it's perfectly fine. One example of this is a Map which contains configuration properties. Real problem starts when at-least one of those thread is updating HashMap i.e. adding, changing or removing any key value pair. Since put() operation can cause re-sizing and which can further lead to infinite loop, that's why either you should use Hashtable or ConcurrentHashMap, later is better. 
 
 ----------------------------------------------------
@@ -330,7 +342,7 @@ this() constructor is invoked within a method of a class, if the execution of th
 
 Give a simplest way to find out the time a method takes for execution without using any profiling tool?
 
-long start = System.currentTimeMillis (); method (); long end = System.currentTimeMillis (); System.out.println (ìTime taken for execution is î + (end ñ start));
+long start = System.currentTimeMillis (); method (); long end = System.currentTimeMillis (); System.out.println (‚ÄúTime taken for execution is ‚Äù + (end ‚Äì start));
 
 Read more: http://javarevisited.blogspot.com/2011/04/top-20-core-java-interview-questions.html#ixzz3f0N9PPuH
 
